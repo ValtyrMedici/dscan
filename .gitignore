@@ -1,0 +1,4 @@
+dscan/settings.py
+staticfiles/admin
+*.sqlite3
+scan/migrations/*

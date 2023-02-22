@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html class="has-background-grey">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            {% block title %} dscan {% endblock %}
+        </title>
+    </head>
+
+    <body>
+        {% block content %}
+        <section class="section">
+            <h1 class="title is-1 has-text-white"><center>dscan</center></h1>
+            <form class="box" method="POST" action="{% url 'dscan-scan' %}">
+                <div class="container block">
+                        {% csrf_token %}
+                        <textarea id="scan" name="scan" class="textarea is-large" placeholder="Paste Scan" rows="10" required></textarea>                
+                </div>
+                <div class="block">
+                    <button class="button is-primary">
+                        Submit
+                    </button>
+                </div>     
+            </form>
+        </section>
+        {% endblock %}
+    </body>
+    <link rel="stylesheet" type="text/css" href="{% static 'scan/style.css' %}">
+</html>
